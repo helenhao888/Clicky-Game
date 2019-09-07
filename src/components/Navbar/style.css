@@ -1,0 +1,12 @@
+/* .nav-item{
+    display:inline-block;
+    margin-right:100px;
+} */
+
+.navbar-nav li {
+    display:inline-block;
+}
+
+span{
+    color:white;
+}

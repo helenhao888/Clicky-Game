@@ -1,0 +1,9 @@
+.bodyContainer{
+    
+    background-image: url("/bodyBackground.jpg");
+    color:purple;
+    text-align: center;
+    padding:20px;
+    font-weight: bold;
+
+}

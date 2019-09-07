@@ -21,10 +21,11 @@ class App extends Component{
         console.log("clicked id",id);
         if ( ! this.state.guessedIds.includes(id)){
             this.state.guessedIds.push(id);
-            console.log("correct");
-            // this.state.currentScore++
-            // current++;
-            // this.setStatestate({currentScore: current})
+           
+            let current = this.state.currentScore;
+            current++;
+            this.setState({currentScore: current})
+            console.log("correct",this.state.currentScore);
         }else{
             console.log("wrong");
         }

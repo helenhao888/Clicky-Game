@@ -6,17 +6,17 @@ function Navbar(props) {
 
 
   const displayMsg = () =>{
-      
-    switch(props.messageStatus){
+      console.log("props",props);
+    switch(props.messagestatus){
         case "0":
             return "Click an image to begin!";
-            // break;
+           
         case "1":
             return "Guessed correctly!"
-            // break;
+           
         case "2":
             return "Guessed incorrectly!"
-            // break; 
+            
         default:
             break;    
          }
@@ -37,12 +37,11 @@ function Navbar(props) {
                   
                     {displayMsg()}  
                   </li>
-                  {/* <li className="nav-item">
-                      <Score />
-                  </li> */}
+                  
               </ul>
-              <Score currentStore = {props.currentScore}
-                     topScore = {props.topScore}
+              <Score currentscore = {props.currentscore}
+                     topscore = {props.topscore}
+                     messagestatus = {props.messagestatus}
                />
           {/* </div> */}
       </nav>

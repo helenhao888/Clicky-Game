@@ -11,30 +11,39 @@ class App extends Component{
         cards,
         initialCards,
         guessedIds:[],
-        currentScore:0,
-        topScore:0,
-        messageStatus:"0"
+        currentscore:0,
+        topscore:0,
+        messagestatus:"0"
         //"0" -- initial message, "1"-- guessed correctly, "2"--guessed incorrectly
     };
 
+   // change cards , calcalute score and change score
     changeCard = id =>{
-    // calcalute score and change score
+    
+        // Clone this.state to the newState object
+        const newState = { ...this.state };
 
-        console.log("clicked id",id);
-        if ( ! this.state.guessedIds.includes(id)){
-            this.state.guessedIds.push(id);
+        if ( ! newState.guessedIds.includes(id)){
+            newState.guessedIds.push(id);
            
-            let current = this.state.currentScore;
-            current++;
-            this.setState({currentScore: current,
-                          messageStatus:"1"});
-            console.log("messageStatus",this.state.currentScore);
+            newState.currentscore++;
+            newState.messagestatus = "1";        
+           
+           
+            
         }else{
-            console.log("wrong");
-            this.setState({messageStatus:"2"});
-        }
-        console.log("guessed ids",this.state.guessedIds);
+            newState.messagestatus = "2";
+
+            newState.topscore = 
+                     newState.topscore>newState.currentscore
+                     ? newState.topscore
+                     : newState.currentscore;
+            newState.currentscore=0;   
+            newState.guessedIds =[];
+
+        }       
         
+        this.setState(newState);
         this.shuffleCard();
 
 
@@ -72,16 +81,15 @@ class App extends Component{
     render(){
         return (
             <div >
-                <Navbar currentSocre={this.state.currentScore}
-                        topScore= {this.state.topScore}
-                        messageStatus={this.state.messageStatus}
+                <Navbar currentscore={this.state.currentscore}
+                        topscore= {this.state.topscore}
+                        messagestatus={this.state.messagestatus}
                 />
                 <Body />
                 { this.state.cards.map(card =>
                    <Card 
                     id={card.id}
                     key={card.id.toString()}
-                    // key={shortid.generate()}
                     name={card.name}
                     image={card.image}
                     changeCard={this.changeCard}

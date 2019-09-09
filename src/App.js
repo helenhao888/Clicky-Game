@@ -12,7 +12,9 @@ class App extends Component{
         initialCards,
         guessedIds:[],
         currentScore:0,
-        topScore:0
+        topScore:0,
+        messageStatus:"0"
+        //"0" -- initial message, "1"-- guessed correctly, "2"--guessed incorrectly
     };
 
     changeCard = id =>{
@@ -24,10 +26,12 @@ class App extends Component{
            
             let current = this.state.currentScore;
             current++;
-            this.setState({currentScore: current})
-            console.log("correct",this.state.currentScore);
+            this.setState({currentScore: current,
+                          messageStatus:"1"});
+            console.log("messageStatus",this.state.currentScore);
         }else{
             console.log("wrong");
+            this.setState({messageStatus:"2"});
         }
         console.log("guessed ids",this.state.guessedIds);
         
@@ -70,6 +74,7 @@ class App extends Component{
             <div >
                 <Navbar currentSocre={this.state.currentScore}
                         topScore= {this.state.topScore}
+                        messageStatus={this.state.messageStatus}
                 />
                 <Body />
                 { this.state.cards.map(card =>

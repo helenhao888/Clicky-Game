@@ -3,6 +3,25 @@ import "./style.css"
 import Score from "../Score";
 
 function Navbar(props) {
+
+
+  const displayMsg = () =>{
+      
+    switch(props.messageStatus){
+        case "0":
+            return "Click an image to begin!";
+            // break;
+        case "1":
+            return "Guessed correctly!"
+            // break;
+        case "2":
+            return "Guessed incorrectly!"
+            // break; 
+        default:
+            break;    
+         }
+  } ;
+
   return (
       <nav className="navbar sticky-top  navbar-dark bg-dark">
           {/* <a class="navbar-brand" href="#">Navbar w/ text</a>
@@ -11,12 +30,12 @@ function Navbar(props) {
           </button> */}
           {/* <div class="collapse navbar-collapse" id="navbarText"> */}
               <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">
-                      <a className="nav-link" href="#">
-                          <h1>Clicky Game</h1></a>
+                  <li className="nav-item active">                     
+                        <h1>Clicky Game</h1>
                   </li>
                   <li className="nav-item">
-                      <span>Click an image to begin!</span>
+                  
+                    {displayMsg()}  
                   </li>
                   {/* <li className="nav-item">
                       <Score />

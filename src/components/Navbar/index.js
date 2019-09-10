@@ -12,39 +12,36 @@ function Navbar(props) {
             return "Click an image to begin!";
            
         case "1":
-            return "Guessed correctly!"
+            return "You guessed correctly!"
            
         case "2":
-            return "Guessed incorrectly!"
+            return "You guessed incorrectly!"
             
         default:
             break;    
          }
   } ;
 
+ 
+
   return (
       <nav className="navbar sticky-top  navbar-dark bg-dark">
-          {/* <a class="navbar-brand" href="#">Navbar w/ text</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button> */}
-          {/* <div class="collapse navbar-collapse" id="navbarText"> */}
-              <ul className="navbar-nav mr-auto">
-                  <li className="nav-item active">                     
-                        <h1>Clicky Game</h1>
-                  </li>
-                  <li className="nav-item">
-                  
-                    {displayMsg()}  
-                  </li>
-                  
-              </ul>
-              <Score currentscore = {props.currentscore}
+          <a className="navbar-brand" href="#" onClick={props.resetgame}>
+              <h1>Clicky Game</h1></a>
+              
+              <div className="center msgBox ">
+                  <span>{displayMsg()}</span>
+              </div>
+              <ul className="navbar-nav">    
+                  <Score currentscore = {props.currentscore}
                      topscore = {props.topscore}
                      messagestatus = {props.messagestatus}
-               />
-          {/* </div> */}
+                     />
+                  
+              </ul>    
+               
       </nav>
+
   );
 }
 

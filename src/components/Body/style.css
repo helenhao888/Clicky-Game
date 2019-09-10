@@ -3,7 +3,7 @@
     background-image: url("/bodyBackground.jpg");
     color:purple;
     text-align: center;
-    padding:20px;
+    padding:10px;
     font-weight: bold;
-
+    height: 100px;
 }

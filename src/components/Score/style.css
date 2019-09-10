@@ -1,4 +1,8 @@
-.scoreBoard{
-    float:right;
-    color:white;
+
+.scoreBoard li{
+    margin:15px;
+    display: inline-block;
+    color:lightgreen;
 }
+
+

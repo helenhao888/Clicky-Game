@@ -2,19 +2,19 @@ import React, {Component} from "react";
 import Body from "./components/Body";
 import Navbar from "./components/Navbar";
 import Card from "./components/Card";
-import initialCards from "./cards.json";
 import cards  from "./cards.json";
+import Footer from "./components/Footer"
 
 class App extends Component{
 
     state = {
         cards,
-        initialCards,
         guessedIds:[],
         currentscore:0,
         topscore:0,
-        messagestatus:"0"
+        messagestatus:"0",
         //"0" -- initial message, "1"-- guessed correctly, "2"--guessed incorrectly
+        animating:false
     };
 
    // change cards , calcalute score and change score
@@ -28,12 +28,12 @@ class App extends Component{
            
             newState.currentscore++;
             newState.messagestatus = "1";        
-           
+            newState.animating = true;
            
             
         }else{
             newState.messagestatus = "2";
-
+            newState.animating = true;
             newState.topscore = 
                      newState.topscore>newState.currentscore
                      ? newState.topscore
@@ -69,21 +69,29 @@ class App extends Component{
               cards[currentIndex] = cards[randomIndex];
               cards[randomIndex] = temporaryValue;
             }
-          
-         console.log("cards",cards);
-          
+        
 
         this.setState({cards});
     }
 
-   
+    resetgame = () =>{
+        this.setState({
+            guessedIds:[],
+            currentscore:0,
+            topscore:0,
+            messagestatus:"0",
+        })
+    }
 
     render(){
         return (
             <div >
-                <Navbar currentscore={this.state.currentscore}
+                <Navbar 
+                        currentscore={this.state.currentscore}
                         topscore= {this.state.topscore}
                         messagestatus={this.state.messagestatus}
+                        animating={this.state.animating}
+                        resetgame={this.resetgame}
                 />
                 <Body />
                 { this.state.cards.map(card =>
@@ -96,6 +104,7 @@ class App extends Component{
                    />
                 )
                 }
+                <Footer />
             </div>
         )
     }

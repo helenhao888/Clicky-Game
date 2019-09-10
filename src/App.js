@@ -3,7 +3,7 @@ import Body from "./components/Body";
 import Navbar from "./components/Navbar";
 import Card from "./components/Card";
 import cards  from "./cards.json";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 class App extends Component{
 
@@ -93,6 +93,7 @@ class App extends Component{
                         animating={this.state.animating}
                         resetgame={this.resetgame}
                 />
+                
                 <Body />
                 { this.state.cards.map(card =>
                    <Card 

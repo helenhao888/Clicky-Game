@@ -2,20 +2,21 @@ import React from "react";
 import "./style.css"
 import Score from "../Score";
 
+
 function Navbar(props) {
 
 
-  const displayMsg = () =>{
-      console.log("props",props);
+  const displayMessage = () =>{
+ 
     switch(props.messagestatus){
         case "0":
-            return "Click an image to begin!";
+            return <span >Click an image to begin!</span>;
            
         case "1":
-            return "You guessed correctly!"
+            return <span >You guessed correctly!</span>
            
         case "2":
-            return "You guessed incorrectly!"
+            return <span >You guessed incorrectly!</span>
             
         default:
             break;    
@@ -25,23 +26,23 @@ function Navbar(props) {
  
 
   return (
+                     
       <nav className="navbar sticky-top  navbar-dark bg-dark">
           <a className="navbar-brand" href="#" onClick={props.resetgame}>
               <h1>Clicky Game</h1></a>
               
-              <div className="center msgBox ">
-                  <span>{displayMsg()}</span>
+              <div className="center msgBox "> 
+                   { displayMessage()}  
+                    
               </div>
               <ul className="navbar-nav">    
                   <Score currentscore = {props.currentscore}
                      topscore = {props.topscore}
                      messagestatus = {props.messagestatus}
-                     />
-                  
+                     />                  
               </ul>    
                
       </nav>
-
   );
 }
 

@@ -1,3 +1,52 @@
+# Clicky Game
+
+## Overview
+
+This is a memory game with React. This application use React to design the UI  components, manage component state, and respond to user events.
+
+
+### App Live Link
+
+
+### App GitHub Link
+https://github.com/helenhao888/Clicky-Game.git
+
+### Developer
+    Developed by Helen Hao (helenhao888)
+    
+### Technologies
+    
+    React.js 
+    JSX
+    MVC design 
+    javascript    
+    HTML
+    CSS    
+    JSON
+    HeroKu/GitHub
+
+### Screenshots
+1. Game start 
+   
+   ![start](public/gameStart.png)
+2. If user guesses correctly, the current score adds 1 and display the message "You guessed correctly"
+   
+   ![guess correct](public/guessCorrect.png)
+
+3.  If user guesses incorrectly,displays the message "You guessed incorrectly",  the current score resets to 0 and user can continue to play another time.
+   
+   ![guess incorrect](public/guessIncorrect.png)
+
+4. Top score
+   * Each time game over , it records the top score.
+   ![top score](public/guessCorrectWithTop.png)   
+   ![top score](public/guessEndtWithTop.png)  
+
+5. Restart game
+   * If user clicks Clicky Game on the top left, the game resets, all scores go to zero. 
+   ![restart game](public/gameStart.png)   
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

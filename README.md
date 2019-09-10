@@ -6,7 +6,7 @@ This is a memory game with React. This application use React to design the UI  c
 
 
 ### App Live Link
-
+https://helenhao888.github.io/clicky-game 
 
 ### App GitHub Link
 https://github.com/helenhao888/Clicky-Game.git

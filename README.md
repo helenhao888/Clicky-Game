@@ -26,25 +26,27 @@ https://github.com/helenhao888/Clicky-Game.git
     HeroKu/GitHub
 
 ### Screenshots
-1. Game start 
-   
+1. Game start    
    ![start](public/gameStart.png)
-2. If user guesses correctly, the current score adds 1 and display the message "You guessed correctly"
+2. If user guesses correctly
+    *  the current score adds 1 and display the message "You guessed correctly"
    
    ![guess correct](public/guessCorrect.png)
 
-3.  If user guesses incorrectly,displays the message "You guessed incorrectly",  the current score resets to 0 and user can continue to play another time.
+3.  If user guesses incorrectly
+     * displays the message "You guessed incorrectly",  the current score resets to 0 and user can continue to play another time.
    
    ![guess incorrect](public/guessIncorrect.png)
 
 4. Top score
    * Each time game over , it records the top score.
    ![top score](public/guessCorrectWithTop.png)   
-   ![top score](public/guessEndtWithTop.png)  
+   ![top score](public/guessEndWithTop.png)  
 
 5. Restart game
    * If user clicks Clicky Game on the top left, the game resets, all scores go to zero. 
    ![restart game](public/gameStart.png)   
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -115,3 +117,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Contact Information
+
+   Helen Hao :
+   :link:[linkedIn](https://www.linkedin.com/in/jinzhao-helen-hao-611b3752/) 
+   :link:[Portfolio](https://helenhao888.github.io)    

@@ -19,3 +19,8 @@
   .card > .img-container > img {
     width: 95%
   }
+
+  .card:hover,
+.card:focus {
+  background:yellow;
+}

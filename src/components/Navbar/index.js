@@ -28,19 +28,23 @@ function Navbar(props) {
   return (
                      
       <nav className="navbar sticky-top  navbar-dark bg-dark">
-          <a className="navbar-brand" href="#" onClick={props.resetgame}>
-              <h1>Clicky Game</h1></a>
-              
-              <div className="center msgBox "> 
-                   { displayMessage()}  
-                    
-              </div>
-              <ul className="navbar-nav">    
-                  <Score currentscore = {props.currentscore}
-                     topscore = {props.topscore}
-                     messagestatus = {props.messagestatus}
-                     />                  
-              </ul>    
+          <ul>
+          <button type="button" className="link-button"
+              onClick={props.resetgame}>
+              Clicky Game
+                    </button>
+             
+           </ul>
+          <div className="center msgBox ">
+              {displayMessage()}
+
+          </div>
+          <ul className="navbar-nav">
+              <Score currentscore={props.currentscore}
+                  topscore={props.topscore}
+                  messagestatus={props.messagestatus}
+              />
+          </ul>    
                
       </nav>
   );

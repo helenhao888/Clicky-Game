@@ -12,7 +12,7 @@ This is a memory game with React. This application use React to design the UI  c
 * Once the user's score is reset after an incorrect guess, the game should restart.
 
 ### App Live Link
-https://helenhao888.github.io/clicky-game 
+https://helenhao888.github.io/Clicky-Game
 
 ### App GitHub Link
 https://github.com/helenhao888/Clicky-Game.git
